@@ -1,5 +1,4 @@
 # VRChat-GIF-to-Sprite-Sheet
-## 项目简介
 **VRChat-GIF-to-Sprite-Sheet** 是一个简单易用的工具，能够将 GIF 动画拆分为多帧，并将这些帧整齐排列到一个固定网格中，生成 **精灵表 (Sprite Sheet)**方便您上传到VRChat自定义表情
 ## 功能特点
 - **从 GIF 动画中提取帧**：自动解析 GIF 动画，提取其中的帧图像。
