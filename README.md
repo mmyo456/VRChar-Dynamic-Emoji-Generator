@@ -18,7 +18,8 @@
 ### 安装依赖
 运行以下命令安装所需依赖：
 ```bash
-pip install pillow```
+pip install pillow
+```
 ---
 
 ### 上传教程
