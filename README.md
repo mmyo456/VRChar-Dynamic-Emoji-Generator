@@ -19,3 +19,12 @@
 运行以下命令安装所需依赖：
 ```bash
 pip install pillow
+
+---
+
+### 上传教程
+**[VRChat Emoji上传页面](https://vrchat.com/home/gallery/emoji)**
+点击**Upload a New Emoji**并勾选**Enable Sprite Sheet Mode [BETA]**然后选择你刚导出的Sprite Sheet
+- **Frames**：请结合自身上传的Sprite Sheet有多少帧动画填写
+- **FPS**：按自身需求调节动画速度
+当调节到自己满意的状态时即可点击**Next**上传
