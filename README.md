@@ -18,12 +18,11 @@
 ### 安装依赖
 运行以下命令安装所需依赖：
 ```bash
-pip install pillow
-```
+pip install pillow```
 ---
 
 ### 上传教程
-**确保您已拥有VRChat Plus**
+**确保您已拥有VRChat Plus**<br/>
   **[VRChat Emoji上传页面](https://vrchat.com/home/gallery/emoji)**
   点击**Upload a New Emoji**并勾选**Enable Sprite Sheet Mode**然后选择你刚导出的Sprite Sheet
   - **Frames**：请结合自身上传的Sprite Sheet有多少帧动画填写
