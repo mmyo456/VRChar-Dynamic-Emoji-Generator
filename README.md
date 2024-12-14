@@ -23,6 +23,7 @@ pip install pillow
 ---
 
 ### 上传教程
+**确保您已拥有VRChat Plus**
 **[VRChat Emoji上传页面](https://vrchat.com/home/gallery/emoji)**
 点击**Upload a New Emoji**并勾选**Enable Sprite Sheet Mode**然后选择你刚导出的Sprite Sheet
 - **Frames**：请结合自身上传的Sprite Sheet有多少帧动画填写
