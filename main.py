@@ -1,6 +1,6 @@
 import sys
 import os
-from PIL import Image, ImageTk
+from PIL import Image, ImageTk, ImageSequence
 import tkinter as tk
 from tkinter import filedialog, messagebox
 from tkinter import ttk
@@ -50,11 +50,12 @@ class SpriteSheetGenerator:
         except Exception as e:
             raise RuntimeError(f"生成Sprite Sheet时发生错误: {e}")
 
+
 class SpriteSheetApp:
     def __init__(self, root):
         self.root = root
         self.root.title("VRChar Dynamic Emoji Generator")
-        
+
         # 设置应用图标，使用资源路径获取
         icon_path = self.resource_path('icon.ico')
         try:
