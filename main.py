@@ -1,4 +1,6 @@
-from PIL import Image, ImageSequence
+import sys
+import os
+from PIL import Image, ImageTk
 import tkinter as tk
 from tkinter import filedialog, messagebox
 from tkinter import ttk
@@ -48,11 +50,19 @@ class SpriteSheetGenerator:
         except Exception as e:
             raise RuntimeError(f"生成Sprite Sheet时发生错误: {e}")
 
-
 class SpriteSheetApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("VRChat GIF to Sprite Sheet")
+        self.root.title("VRChar Dynamic Emoji Generator")
+        
+        # 设置应用图标，使用资源路径获取
+        icon_path = self.resource_path('icon.ico')
+        try:
+            img = Image.open(icon_path)
+            self.root.iconphoto(False, ImageTk.PhotoImage(img))  # 适用于跨平台
+        except Exception as e:
+            print(f"图标加载失败: {e}")  # 打印错误以便调试
+
         self.generator = SpriteSheetGenerator()
         self.gif_path = None
 
@@ -61,7 +71,7 @@ class SpriteSheetApp:
 
         # 界面布局
         ttk.Label(root, text="选择一个 GIF 文件:").pack(pady=10)
-        ttk.Label(root, text="Github: mmyo456/VRChat-GIF-to-Sprite-Sheet").pack(pady=10)
+        ttk.Label(root, text="Github: mmyo456/VRChar Dynamic Emoji Generator").pack(pady=10)
 
         self.select_button = ttk.Button(root, text="选择文件", command=self.select_file)
         self.select_button.pack(pady=5)
@@ -87,6 +97,19 @@ class SpriteSheetApp:
 
         self.generate_button = ttk.Button(root, text="生成 Sprite Sheet", command=self.generate_spritesheet, state=tk.DISABLED)
         self.generate_button.pack(pady=10)
+
+    def resource_path(self, relative_path):
+        """获取打包后应用的资源文件路径"""
+        try:
+            # 如果是打包成 .exe 文件
+            if getattr(sys, 'frozen', False):
+                base_path = sys._MEIPASS
+            else:
+                base_path = os.path.abspath(".")
+            return os.path.join(base_path, relative_path)
+        except Exception as e:
+            print(f"获取资源路径时出错: {e}")
+            return relative_path
 
     def apply_theme(self):
         """应用自定义的暗色 ttk 样式"""
@@ -134,7 +157,6 @@ class SpriteSheetApp:
             messagebox.showinfo("成功", f"Sprite Sheet 已保存到: {output_file}")
         except Exception as e:
             messagebox.showerror("错误", f"生成 Sprite Sheet 时出错: {e}")
-
 
 if __name__ == "__main__":
     root = tk.Tk()
